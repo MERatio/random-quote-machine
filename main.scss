@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --color: #333;
+  --backgroundColor: #333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color);
+  background-color: var(--backgroundColor);
+}
+
+button:active,
+button:focus,
+a:active,
+a:focus {
+  outline: 0;
+  border: none;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+#quote-box {
+  background-color: #fff;
+  width: 50rem;
+  min-height: 25rem;
+  padding: 3rem 3.5rem;
+  margin-top: 5%;
+  border-radius: .3rem;
+  box-shadow: 0 .5rem 1rem rgba($color: #000, $alpha: .3);
+  display: flex;
+  flex-direction: column;
+
+  #text-div{
+    line-height: 1.5;
+    font-size: 2.4rem;
+
+    #text {
+      display: inline;
+    }
+  }
+
+  #author-div {
+    margin: 1rem 0 2rem 0;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: flex-end;
+    
+    .hyphen {
+      margin-right: .5rem;
+    }
+
+    #author {
+      display: inline;
+    }
+  }
+  
+  #buttons {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    
+
+    & > * {
+      color: #fff;
+      background-color: var(--backgroundColor);
+      transition: all .2s;
+    }
+
+    & > *:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 .3rem .5rem rgba($color: #000, $alpha: .3);
+
+    }
+
+    #new-quote {
+      font-size: 1.4rem;
+      padding: .8rem 1rem;
+      border: none;
+      border-radius: .3rem;
+      cursor: pointer;
+    }
+
+    a {
+      font-size: 2rem;
+      line-height: 1.8;
+      text-align: center;
+      width: 4rem;
+      height: 4rem;
+      border-radius: .3rem;
+
+      i {
+        vertical-align: middle;
+      }
+    }
+  }
+};
+
+// media quirues
+// 900px max width
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+// 600px max width
+@media only screen and (max-width: 37.5em) {
+  #quote-box {
+    width: 100%;
+    padding: 2rem 2.5rem;
+  }
+}
